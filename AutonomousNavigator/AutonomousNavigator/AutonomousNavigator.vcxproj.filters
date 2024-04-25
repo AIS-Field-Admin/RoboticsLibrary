@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Kaynak Dosyalar">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Kaynak Dosyaları">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\ConnectionControllers">
+      <UniqueIdentifier>{ebd93e77-0abf-440d-8f3f-67fb4b36cda0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\SensorDataControllers">
+      <UniqueIdentifier>{bf81cd38-c3e4-4616-9143-fa3bb488550b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\ConnectionControllers">
+      <UniqueIdentifier>{c0497646-2742-4aef-a719-fc5c4594ee5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\SensorDataControllers">
+      <UniqueIdentifier>{c1cd7586-e7df-4fe4-9217-c7f8c9268e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\PositionalControllers">
+      <UniqueIdentifier>{3605b1ab-c260-486a-bd2c-8223be9e9e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\PositionalControllers">
+      <UniqueIdentifier>{8fa8b4eb-6da8-47a2-8c22-43e90bf5122d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\SensorControllers">
+      <UniqueIdentifier>{adc93eb6-4fa6-4eda-891e-9c4eafe02b8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\SensorControllers">
+      <UniqueIdentifier>{542d271d-f365-4a37-a3ac-599a1b758892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\NavigationControllers">
+      <UniqueIdentifier>{ec233d4a-b846-4110-9cde-baf9912fa43a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\NavigationControllers">
+      <UniqueIdentifier>{d603ac29-1e82-4c53-bd16-ad1882001eef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="AutonomousNavigator_MainManager.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorSettingsReader.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="AutonomousNavigatorGlobals.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorConnectionEstablisher.h">
+      <Filter>Üst Bilgi Dosyaları\ConnectionControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorConnectionManager.h">
+      <Filter>Üst Bilgi Dosyaları\ConnectionControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="IConnectionManager.h">
+      <Filter>Üst Bilgi Dosyaları\ConnectionControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorDataParser.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorDataReader.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorDataStruct.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorStateKeeper.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorStateManager.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="INavigatorStateManager.h">
+      <Filter>Üst Bilgi Dosyaları\SensorDataControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionalStateManager.h">
+      <Filter>Üst Bilgi Dosyaları\PositionalControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionalState.h">
+      <Filter>Üst Bilgi Dosyaları\PositionalControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="IPositionalStateManager.h">
+      <Filter>Üst Bilgi Dosyaları\PositionalControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="INavigatorSensor.h">
+      <Filter>Üst Bilgi Dosyaları\SensorControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorEncoder.h">
+      <Filter>Üst Bilgi Dosyaları\SensorControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorImu.h">
+      <Filter>Üst Bilgi Dosyaları\SensorControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigatorSensorConstructor.h">
+      <Filter>Üst Bilgi Dosyaları\SensorControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationManager.h">
+      <Filter>Üst Bilgi Dosyaları\NavigationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="RotationPlanner.h">
+      <Filter>Üst Bilgi Dosyaları\NavigationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="IRotationPlanner.h">
+      <Filter>Üst Bilgi Dosyaları\NavigationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="INavigationSupervisor.h">
+      <Filter>Üst Bilgi Dosyaları\NavigationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationSupervisor.h">
+      <Filter>Üst Bilgi Dosyaları\NavigationControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="IAutonomousNavigator.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="AutonomousNavigator_MainManager.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorSettingsReader.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="AutonomousNavigatorGlobals.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorConnectionManager.cpp">
+      <Filter>Kaynak Dosyalar\ConnectionControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorConnectionEstablisher.cpp">
+      <Filter>Kaynak Dosyalar\ConnectionControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorDataParser.cpp">
+      <Filter>Kaynak Dosyalar\SensorDataControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorDataReader.cpp">
+      <Filter>Kaynak Dosyalar\SensorDataControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorStateKeeper.cpp">
+      <Filter>Kaynak Dosyalar\SensorDataControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorStateManager.cpp">
+      <Filter>Kaynak Dosyalar\SensorDataControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionalStateManager.cpp">
+      <Filter>Kaynak Dosyalar\PositionalControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionalState.cpp">
+      <Filter>Kaynak Dosyalar\PositionalControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorEncoder.cpp">
+      <Filter>Kaynak Dosyalar\SensorControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorImu.cpp">
+      <Filter>Kaynak Dosyalar\SensorControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigatorSensorConstructor.cpp">
+      <Filter>Kaynak Dosyalar\SensorControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigationManager.cpp">
+      <Filter>Kaynak Dosyalar\NavigationControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="RotationPlanner.cpp">
+      <Filter>Kaynak Dosyalar\NavigationControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigationSupervisor.cpp">
+      <Filter>Kaynak Dosyalar\NavigationControllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="..\Settings\settings.json">
+      <Filter>Kaynak Dosyaları</Filter>
+    </None>
+  </ItemGroup>
+</Project>
