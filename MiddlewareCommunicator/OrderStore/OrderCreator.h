@@ -10,6 +10,7 @@ class OrderCreator : public IOrderCreator
 		bool ConstructOrderCreator(std::string recipientName, std::string senderName) override;
 		
 		std::string CreateOrder(std::string orderType, const std::map<std::string, std::string>& parameters) override;
+		std::string CreateOrder(std::string orderType, const std::string& parameters) override;
 
 	private:
 
