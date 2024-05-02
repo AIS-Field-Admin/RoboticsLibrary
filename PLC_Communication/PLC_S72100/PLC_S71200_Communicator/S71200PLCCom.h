@@ -15,9 +15,13 @@ class S71200PLCCom : public IPLCCommunicator
 
         bool Connect(std::string ip, std::string port = "NoPort") override;
         void Disconnect() override;
+
         void ReadBytes(int DBNumber, int StartByteAdr, int Size, void* Buffer) override;
         void WriteBytes(int DBNumber, int StartByteAdr, int Size, void* Buffer) override;
+
+        bool ReadBit(int DBNumber, int ByteAdr, int BitAdr) override;
         void WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) override;
+
 
 
     private:

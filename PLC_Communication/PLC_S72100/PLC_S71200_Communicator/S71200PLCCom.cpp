@@ -86,7 +86,32 @@ void S71200PLCCom::WriteBytes(int DBNumber, int StartByteAdr, int Size, void* Bu
     }
 }
 
-void S71200PLCCom::WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) 
+bool S71200PLCCom::ReadBit(int DBNumber, int ByteAdr, int BitAdr)
+{
+    if (!plc->Connected())
+    {
+        std::cerr << "Not connected to PLC." << std::endl;
+
+        return false;
+    }
+
+    byte buffer;
+
+    int result = plc->DBRead(DBNumber, ByteAdr, 1, &buffer);
+
+    if (result != 0)
+    {
+        std::cerr << "Failed to read byte for bit. Error code: " << result << std::endl;
+
+        return false;
+    }
+
+    byte mask = 1 << BitAdr;
+
+    return (buffer & mask) != 0;
+}
+
+void S71200PLCCom::WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue)
 {  
     if (!plc->Connected()) 
     {
