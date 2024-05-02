@@ -13,9 +13,11 @@ namespace RoboticsNavigationTests
             TEST_METHOD(TestMethod_CreatePlan_WhenTargetEast)
             {
                 // Arrange
-                PositionalState::GetInstance().position_x = 0;
-                PositionalState::GetInstance().position_y = 0;
-                PositionalState::GetInstance().angleDeg = 0;
+
+                std::pair<double, double> position = PositionalState::GetInstance().GetPosition();
+
+                PositionalState::GetInstance().SetStartingPosition(0, 0);
+                PositionalState::GetInstance().SetStartingAngle(0);
                 RotationPlanner rotationPlanner;
 
                 // East target should be 0 degrees from origin
@@ -34,9 +36,8 @@ namespace RoboticsNavigationTests
             TEST_METHOD(TestMethod_CreatePlan_WhenTargetNorth)
             {
                 // Arrange
-                PositionalState::GetInstance().position_x = 0;
-                PositionalState::GetInstance().position_y = 0;
-                PositionalState::GetInstance().angleDeg = 0;
+                PositionalState::GetInstance().SetStartingPosition(0, 0);
+                PositionalState::GetInstance().SetStartingAngle(0);
                 RotationPlanner rotationPlanner;
 
                 // North target should be 90 degrees from origin
@@ -51,9 +52,6 @@ namespace RoboticsNavigationTests
                 Assert::AreEqual(expectedPlan.first, plan.first, L"Target angle should be 90 for North");
                 Assert::AreEqual(expectedPlan.second, plan.second, L"Should turn right to face North");
             }
-
-        // Additional test methods for other scenarios (e.g., target South, West)
-        // ...
 
     };
 }

@@ -3,28 +3,45 @@
 
 AutonomousNavigator_MainManager::AutonomousNavigator_MainManager() 
 {
-	_navigatorConnectionManager = std::make_shared<NavigatorConnectionManager>();
-	_navigatorStateManager = std::make_shared<NavigatorStateManager>();
-	_positionalStateManager = std::make_shared<PositionalStateManager>();
-
-	_navigatorDataReader = NavigatorDataReader();
-
 	_isSettingsRead = NavigatorSettingsReader::ReadSettings("../Settings/settings.json");
 }
 
 AutonomousNavigator_MainManager::~AutonomousNavigator_MainManager()
 {
-	StopReadingSensorsAndUpdatingStates();
+	StopUpdatingStates();
 }
 
-bool AutonomousNavigator_MainManager::SetNavigatorBoundaries(std::shared_ptr<IVehicleCommunicationCommandExecutor> vehicleBoundary)
+bool AutonomousNavigator_MainManager::SetExternalBoundaries(
+										std::shared_ptr<IVehicleCommunicationCommandExecutor> vehicleBoundary,
+										std::shared_ptr<IPositionalStateProvider_2D> positionalStateProviderBoundary
+										)
 {
 	_vehicleBoundary = vehicleBoundary;
-
+	_positionalStateProviderBoundary = positionalStateProviderBoundary;
+	
 	return true;
 }
 
 bool AutonomousNavigator_MainManager::Initialise()
+{
+	if (!isInitialisable())
+	{
+		std::cout << "Autonomous navigator could not be initialised" << std::endl;
+
+		return false;
+	}
+
+	_navigationManager = std::make_shared<NavigationManager>(_vehicleBoundary);
+	_positionalStateManager = std::make_shared<PositionalStateManager>(_positionalStateProviderBoundary);
+
+	StartUpdatingStates();
+
+	_isInitialised = true;
+
+	return true;
+}
+
+bool AutonomousNavigator_MainManager::isInitialisable()
 {
 	if (_vehicleBoundary == nullptr)
 	{
@@ -33,52 +50,75 @@ bool AutonomousNavigator_MainManager::Initialise()
 		return false;
 	}
 
+	if (_positionalStateProviderBoundary == nullptr)
+	{
+		std::cout << "Positional State Provider Boundary for Autonomous Navigator is not set!" << std::endl;
+
+		return false;
+	}
+
 	if (!_isSettingsRead)
 	{
+		std::cout << "Autonomous Navigator settings are not read!" << std::endl;
+
 		return false;
 	}
 
-	connectToSensors();
+	return true;
+}
 
-	if (!_navigatorConnectionManager->IsConnected())
+bool AutonomousNavigator_MainManager::SetStartingPosition(double position_mm_x, double position_mm_y)
+{
+	if (!isPositionalStateManagerConstructed())
 	{
 		return false;
 	}
 
-	NavigatorSensorConstructor::GetInstance().ConstructSensors();
-	_positionalStateManager->SetEncoders(NavigatorSensorConstructor::GetInstance().GetEncoders());
-	StartReadingSensorsAndUpdatingStates();
-
-	_navigationManager = std::make_shared<NavigationManager>(_vehicleBoundary);
-
-	_isInitialised = true;
+	_positionalStateManager->SetStartingPositions(position_mm_x, position_mm_y);
 
 	return true;
 }
 
-bool AutonomousNavigator_MainManager::connectToSensors()
+bool AutonomousNavigator_MainManager::SetStartingAngle(double angle)
 {
-	if (!_navigatorConnectionManager->Connect())
+	if (!isPositionalStateManagerConstructed())
 	{
-		// Handle if error occurs
+		return false;
 	}
 
-	return true;
-}
-
-bool AutonomousNavigator_MainManager::StartReadingSensorsAndUpdatingStates()
-{
-	_sensorThread = std::thread(&AutonomousNavigator_MainManager::readSensorsAndUpdateStates, this);
+	_positionalStateManager->SetStartingAngle(angle);
 
 	return true;
 }
 
-bool AutonomousNavigator_MainManager::StopReadingSensorsAndUpdatingStates()
+bool AutonomousNavigator_MainManager::isPositionalStateManagerConstructed()
 {
-	_isReadingSensors = false;
+	if (_positionalStateManager == nullptr)
+	{
+		std::cout << "Positional State Manager is not constructed yet" << std::endl;
 
-	if (_sensorThread.joinable())
-		_sensorThread.join();
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+
+bool AutonomousNavigator_MainManager::StartUpdatingStates()
+{
+	_stateProviderThread = std::thread(&AutonomousNavigator_MainManager::runStateUpdateLoop, this);
+
+	return true;
+}
+
+bool AutonomousNavigator_MainManager::StopUpdatingStates()
+{
+	_isUpdatingStates = false;
+
+	if (_stateProviderThread.joinable())
+		_stateProviderThread.join();
 
 	return true;
 }
@@ -122,16 +162,12 @@ std::string AutonomousNavigator_MainManager::GetNavigationStatus()
 	return _navigationManager->GetNavigationStatus();
 }
 
-void AutonomousNavigator_MainManager::readSensorsAndUpdateStates()
+void AutonomousNavigator_MainManager::runStateUpdateLoop()
 {
-	_isReadingSensors = true;
+	_isUpdatingStates = true;
 
-	while (_isReadingSensors)
+	while (_isUpdatingStates)
 	{
-		const char* data = _navigatorDataReader.ReadData();  
-		
-		_navigatorStateManager->UpdateStates(data);
-		
 		_positionalStateManager->UpdateState();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(10)); 

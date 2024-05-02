@@ -1,23 +1,23 @@
 #pragma once
 #include "IPositionalStateManager.h"
-#include "NavigatorSensorConstructor.h"
-#include "NavigatorEncoder.h"
 #include "PositionalState.h"
+#include "IPositionalStateProvider_2D.h"
 
 class PositionalStateManager : public IPositionalStateManager
 {
 	public:
 
-		PositionalStateManager();
+		PositionalStateManager(std::shared_ptr<IPositionalStateProvider_2D> positionalStateProvider);
 
 		void UpdateState() override;
 
-		void SetEncoders(std::shared_ptr<NavigatorEncoders> encoders) override;
+		void SetStartingPositions(double startingPosition_x, double startingPosition_y) override;
+		void SetStartingAngle(double startingAngle) override;
 
 
 	private:
 
-		std::shared_ptr<NavigatorEncoders> _encoders;
+		std::shared_ptr<IPositionalStateProvider_2D> _positionalStateProvider;
 
 		void updateAngle();
 

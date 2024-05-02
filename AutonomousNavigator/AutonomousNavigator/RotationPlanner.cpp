@@ -12,9 +12,12 @@ RotationPlanner::RotationPlanner()
 
 std::pair<double, std::string> RotationPlanner::CreatePlan(double target_x, double target_y)
 {
-    double current_x = PositionalState::GetInstance().position_x.load();
-    double current_y = PositionalState::GetInstance().position_y.load();
-    double current_angle = PositionalState::GetInstance().angleDeg.load();
+    std::pair <double, double> currentPosition = PositionalState::GetInstance().GetPosition();
+
+    double current_x = currentPosition.first;
+    double current_y = currentPosition.second;
+
+    double current_angle = PositionalState::GetInstance().GetAngle();
 
     double target_angle = getTargetAngle(current_x, current_y, target_x, target_y);
 

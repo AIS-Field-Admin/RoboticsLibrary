@@ -20,7 +20,7 @@ namespace SettingReaderTests
 
 			// Assert
 			Assert::IsTrue(result, L"Failed to read settings.json");
-			Assert::AreEqual(std::string("192.168.0.7"), AutonomousNavigatorGlobals::IP_ADDRESS, L"IP_ADDRESS did not match expected value");
+			Assert::IsTrue(AutonomousNavigatorGlobals::NAVIGATION_TOLERENCE_METERS > 0, L"NAVIGATION_TOLERENCE_METERS was not read");
 		}
 
 		TEST_METHOD(TestReadSettingsFail)
