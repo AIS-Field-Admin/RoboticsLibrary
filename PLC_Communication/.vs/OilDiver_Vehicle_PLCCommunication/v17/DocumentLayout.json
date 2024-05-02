@@ -1,0 +1,104 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|solutionrelative:OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|solutionrelative:OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|solutionrelative:OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|solutionrelative:OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{74329C99-2DE9-4923-94BB-0090B2818013}|OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication.vcxproj|solutionrelative:OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "S71200PLCCom.cpp",
+              "DocumentMoniker": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp",
+              "RelativeDocumentMoniker": "OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp",
+              "ToolTip": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp",
+              "RelativeToolTip": "OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.cpp",
+              "ViewState": "AQIAAA0AAAAAAAAAAAASwBkAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-22T06:58:10.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PLCCommandExecutor.cpp",
+              "DocumentMoniker": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp",
+              "RelativeDocumentMoniker": "OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp",
+              "ToolTip": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp",
+              "RelativeToolTip": "OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.cpp",
+              "ViewState": "AQIAAAYAAAAAAAAAAAASwBQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-22T06:57:52.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IVehicleCommunicationCommandExecutor.h",
+              "DocumentMoniker": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h",
+              "RelativeDocumentMoniker": "OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h",
+              "ToolTip": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h",
+              "RelativeToolTip": "OilDiver_Vehicle_PLCCommunication\\IVehicleCommunicationCommandExecutor.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-22T06:53:15.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PLCCommandExecutor.h",
+              "DocumentMoniker": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h",
+              "RelativeDocumentMoniker": "OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h",
+              "ToolTip": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h",
+              "RelativeToolTip": "OilDiver_Vehicle_PLCCommunication\\PLCCommandExecutor.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-19T12:24:03.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "S71200PLCCom.h",
+              "DocumentMoniker": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h",
+              "RelativeDocumentMoniker": "OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h",
+              "ToolTip": "C:\\Users\\Oktay\\source\\repos\\OilDiver_Vehicle_PLCCommunication\\OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h",
+              "RelativeToolTip": "OilDiver_Vehicle_PLCCommunication\\S71200PLCCom.h",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-19T12:00:31.906Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
