@@ -30,15 +30,6 @@
     <ClCompile Include="NavigatorGlobalsTests.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
-    <ClCompile Include="NavigatorDataParserTest.cpp">
-      <Filter>Kaynak Dosyalar</Filter>
-    </ClCompile>
-    <ClCompile Include="NavigatorEncoderTest.cpp">
-      <Filter>Kaynak Dosyalar</Filter>
-    </ClCompile>
-    <ClCompile Include="NavigatorSensorConstructorTests.cpp">
-      <Filter>Kaynak Dosyalar</Filter>
-    </ClCompile>
     <ClCompile Include="PositionalStateManagerTests.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>

@@ -8,8 +8,6 @@
 #include "IVehicleCommunicationCommandExecutor.h"
 #include "NavigationSupervisor.h"
 
-
-
 class NavigationManager
 {
 	public:

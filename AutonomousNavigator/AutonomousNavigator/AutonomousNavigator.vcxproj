@@ -113,7 +113,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\Users\Oktay\source\repos\OilDiver_Vehicle_PLCCommunication\OilDiver_Vehicle_PLCCommunication;C:\Users\Oktay\source\repos\ModularCommunicator\packages\nlohmann.json.3.11.2\build\native\include\nlohmann;C:\Users\Oktay\source\repos\ModularCommunicator\OrderStore;C:\Users\Oktay\source\repos\ModularCommunicator\OrderHandler;C:\Users\Oktay\source\repos\ModularCommunicator\MiddlewareCommunicator;C:\Users\Oktay\source\repos\ModularCommunicator\ExternalModuleCommunicator;C:\Users\Oktay\source\repos\OilDiver_Vehicle_PLCCommunication\packages\snap7-1.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -122,12 +122,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>ExternalModuleCommunicator.lib
-;
-OrderHandler.lib
-;OrderStore.lib
-;MiddlewareCommunicator.lib;OilDiver_Vehicle_PLCCommunication.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Oktay\source\repos\OilDiver_Vehicle_PLCCommunication\x64\Debug;C:\Users\Oktay\source\repos\ModularCommunicator\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -153,45 +149,24 @@ OrderHandler.lib
     <ClInclude Include="IAutonomousNavigator.h" />
     <ClInclude Include="INavigationSupervisor.h" />
     <ClInclude Include="IRotationPlanner.h" />
-    <ClInclude Include="INavigatorSensor.h" />
-    <ClInclude Include="INavigatorStateManager.h" />
     <ClInclude Include="IPositionalStateManager.h" />
     <ClInclude Include="NavigationManager.h" />
     <ClInclude Include="NavigationSupervisor.h" />
     <ClInclude Include="RotationPlanner.h" />
-    <ClInclude Include="NavigatorConnectionEstablisher.h" />
-    <ClInclude Include="NavigatorConnectionManager.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="IConnectionManager.h" />
-    <ClInclude Include="NavigatorDataParser.h" />
-    <ClInclude Include="NavigatorDataReader.h" />
-    <ClInclude Include="NavigatorDataStruct.h" />
-    <ClInclude Include="NavigatorEncoder.h" />
     <ClInclude Include="AutonomousNavigatorGlobals.h" />
-    <ClInclude Include="NavigatorImu.h" />
     <ClInclude Include="NavigatorSettingsReader.h" />
-    <ClInclude Include="NavigatorStateKeeper.h" />
-    <ClInclude Include="NavigatorStateManager.h" />
     <ClInclude Include="AutonomousNavigator_MainManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PositionalState.h" />
     <ClInclude Include="PositionalStateManager.h" />
-    <ClInclude Include="NavigatorSensorConstructor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NavigationManager.cpp" />
     <ClCompile Include="NavigationSupervisor.cpp" />
     <ClCompile Include="RotationPlanner.cpp" />
-    <ClCompile Include="NavigatorConnectionEstablisher.cpp" />
-    <ClCompile Include="NavigatorConnectionManager.cpp" />
-    <ClCompile Include="NavigatorDataParser.cpp" />
-    <ClCompile Include="NavigatorDataReader.cpp" />
-    <ClCompile Include="NavigatorEncoder.cpp" />
     <ClCompile Include="AutonomousNavigatorGlobals.cpp" />
-    <ClCompile Include="NavigatorImu.cpp" />
     <ClCompile Include="NavigatorSettingsReader.cpp" />
-    <ClCompile Include="NavigatorStateKeeper.cpp" />
-    <ClCompile Include="NavigatorStateManager.cpp" />
     <ClCompile Include="AutonomousNavigator_MainManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -201,7 +176,6 @@ OrderHandler.lib
     </ClCompile>
     <ClCompile Include="PositionalState.cpp" />
     <ClCompile Include="PositionalStateManager.cpp" />
-    <ClCompile Include="NavigatorSensorConstructor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Settings\settings.json" />

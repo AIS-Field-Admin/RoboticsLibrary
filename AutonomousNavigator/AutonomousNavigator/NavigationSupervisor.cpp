@@ -100,7 +100,7 @@ void NavigationSupervisor::runRotationFeedbackLoop(double targetAngle)
 
 bool NavigationSupervisor::isRotationAngleReached(double targetAngle)
 {
-	double currentVehicleAngle = PositionalState::GetInstance().angleDeg;
+	double currentVehicleAngle = PositionalState::GetInstance().GetAngle();
 	double angleTolerence = AutonomousNavigatorGlobals::ROTATION_TOLERENCE_DEGREE;
 
 	bool isReached = std::abs(targetAngle - currentVehicleAngle) < angleTolerence;
@@ -127,10 +127,12 @@ void NavigationSupervisor::runNavigationFeedbackLoop(double target_x, double tar
 
 bool NavigationSupervisor::isPositionReached(double target_x, double target_y)
 {
-	double currentVehicle_x = PositionalState::GetInstance().position_x;
-	double currentVehicle_y = PositionalState::GetInstance().position_y;
+	std::pair<double, double> currentVehiclePosition = PositionalState::GetInstance().GetPosition();
 
-	double distance = calculatePositionDistance(target_x, target_y, currentVehicle_x, currentVehicle_y);
+	double currentVehiclePosition_x = currentVehiclePosition.first;
+	double currentVehiclePosition_y = currentVehiclePosition.second;
+
+	double distance = calculatePositionDistance(target_x, target_y, currentVehiclePosition_x, currentVehiclePosition_y);
 
 	bool isReached = distance < AutonomousNavigatorGlobals::NAVIGATION_TOLERENCE_METERS;
 

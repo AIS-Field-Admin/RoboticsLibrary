@@ -1,12 +1,4 @@
 {
-  "ip": "192.168.0.7",
-  "port": "80",
-
-  "encoder_ppr": 22600.0,
-  "encoder_wheel_diameter": 0.13,
-  "distance_between_palettes": 0.315,
-
   "navigationTolerence_meters": 0.01,
   "rotationTolerence_degree" :  0.5
-
 }

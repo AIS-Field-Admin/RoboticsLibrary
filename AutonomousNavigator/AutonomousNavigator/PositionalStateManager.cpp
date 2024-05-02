@@ -1,43 +1,39 @@
 #include "pch.h"
 #include "PositionalStateManager.h"
 
-PositionalStateManager::PositionalStateManager()
+PositionalStateManager::PositionalStateManager(std::shared_ptr<IPositionalStateProvider_2D> positionalStateProvider)
 {
-
+	_positionalStateProvider = positionalStateProvider;
 }
 
 void PositionalStateManager::UpdateState()
 {
-	_encoders->Process();
-
 	updateAngle();
 
 	updatePosition();
 }
 
-void PositionalStateManager::SetEncoders(std::shared_ptr<NavigatorEncoders> encoders)
+void PositionalStateManager::SetStartingPositions(double startingPosition_x, double startingPosition_y)
 {
-	_encoders = encoders;
+	PositionalState::GetInstance().SetStartingPosition(startingPosition_x, startingPosition_y);
+}
+
+void PositionalStateManager::SetStartingAngle(double startingAngle)
+{
+	PositionalState::GetInstance().SetStartingAngle(startingAngle);
 }
 
 void PositionalStateManager::updateAngle()
 {
-	double currentAngle = PositionalState::GetInstance().angleDeg.load();
-	double newAngle = currentAngle + _encoders->GetRotationAngleChange();
+	double angleReadFromProvider = _positionalStateProvider->GetAngle();
 
-	PositionalState::GetInstance().angleDeg.store(newAngle);
+	PositionalState::GetInstance().UpdateAngle(angleReadFromProvider);
 }
 
 void PositionalStateManager::updatePosition()
 {
-	double angleRadians = PositionalState::GetInstance().angleDeg.load();
+	double positionReadFromProvider_x = _positionalStateProvider->GetPositionX();
+	double positionReadFromProvider_y = _positionalStateProvider->GetPositionY();
 
-	double delta_x = _encoders->GetPositionDisplacement() * std::cos(angleRadians);
-	double delta_y = _encoders->GetPositionDisplacement() * std::sin(angleRadians);
-
-	double updated_x = PositionalState::GetInstance().position_x.load() + delta_x;
-	double updated_y = PositionalState::GetInstance().position_y.load() + delta_y;
-
-	PositionalState::GetInstance().position_x.store(updated_x);
-	PositionalState::GetInstance().position_y.store(updated_y);
+	PositionalState::GetInstance().UpdatePosition(positionReadFromProvider_x, positionReadFromProvider_y);
 }
