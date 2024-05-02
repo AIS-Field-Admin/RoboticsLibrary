@@ -1,0 +1,7 @@
+﻿  OrderCreator.cpp
+  OrderReception.cpp
+C:\Users\Oktay\source\repos\ModularCommunicator\OrderStore\OrderDecoder.h(27,2): warning C4091: 'static ': hiçbir değişken bildirimi yapılmadığında 'OrderDecoder' solunda yoksayılır
+  ('/OrderReception.cpp' kaynak dosyası derleniyor)
+  
+  Kod Üretiliyor...
+  OrderStore.vcxproj -> C:\Users\Oktay\source\repos\ModularCommunicator\x64\Debug\OrderStore.lib
