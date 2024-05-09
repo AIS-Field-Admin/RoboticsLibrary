@@ -6,7 +6,7 @@
 
 #include "IAutonomousNavigator.h"
 
-#include "NavigatorSettingsReader.h"
+#include "AutonomousNavigatorSettingsReader.h"
 #include "PositionalStateManager.h"
 #include "NavigationManager.h"
 
@@ -30,6 +30,7 @@ class AutonomousNavigator_MainManager : public IAutonomousNavigator
 		bool StopUpdatingStates() override;
 		
 		bool Navigate(double target_x, double target_y) override;
+		bool StopNavigation();
 
 		bool IsNavigationCompleted() override;
 		std::string GetNavigationStatus() override;
@@ -47,6 +48,7 @@ class AutonomousNavigator_MainManager : public IAutonomousNavigator
 
 		std::thread _stateProviderThread;
 		std::atomic<bool> _isUpdatingStates = false;
+		bool _isNavigationStarted = false;
 
 		bool isInitialisable();
 		bool isPositionalStateManagerConstructed();

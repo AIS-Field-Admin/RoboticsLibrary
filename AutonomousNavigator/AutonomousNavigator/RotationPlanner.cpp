@@ -41,11 +41,11 @@ std::string RotationPlanner::getTurningDirection(double current_angle, double ta
 
     if (angle_distance < 0)
     {
-        return "Left";
+        return "Right";
     }
     else
     {
-        return "Right";
+        return "Left";
     }  
 }
 

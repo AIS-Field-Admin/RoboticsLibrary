@@ -3,7 +3,8 @@
 
 AutonomousNavigator_MainManager::AutonomousNavigator_MainManager() 
 {
-	_isSettingsRead = NavigatorSettingsReader::ReadSettings("../Settings/settings.json");
+	_isSettingsRead = true;
+	 AutonomousNavigatorSettingsReader::ReadSettings("Settings/AutonomousNavigator_Settings.json");
 }
 
 AutonomousNavigator_MainManager::~AutonomousNavigator_MainManager()
@@ -33,6 +34,7 @@ bool AutonomousNavigator_MainManager::Initialise()
 
 	_navigationManager = std::make_shared<NavigationManager>(_vehicleBoundary);
 	_positionalStateManager = std::make_shared<PositionalStateManager>(_positionalStateProviderBoundary);
+
 
 	StartUpdatingStates();
 
@@ -125,13 +127,36 @@ bool AutonomousNavigator_MainManager::StopUpdatingStates()
 
 bool AutonomousNavigator_MainManager::Navigate(double target_x, double target_y)
 {
-	if (_navigationManager->IsNavigating())
+	int trialCount = 0;
+
+	while (_navigationManager->IsNavigating())
 	{
 		std::cout << "Already Navigating" << std::endl;
 
-		return false;
+		trialCount++;
+
+		if (trialCount == 50)
+		{
+			return false;
+		}
+
+		std::cout << "Navigation Re-Attempt" << std::endl;
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+		
 	}
+
 	_navigationManager->Navigate(target_x, target_y);
+
+	_isNavigationStarted = true;
+
+	return true;
+}
+
+bool AutonomousNavigator_MainManager::StopNavigation()
+{
+	_navigationManager->StopNavigationLoop();
 
 	return true;
 }
@@ -145,10 +170,25 @@ bool AutonomousNavigator_MainManager::IsNavigationCompleted()
 		return false;
 	}
 
+	if (!_isNavigationStarted)
+	{
+		std::cout << "Not stared navigation\n";
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
+
+		return false;
+
+	}
+	
 	bool isCompleted = !(_navigationManager->IsNavigating());
+
+	if (isCompleted)
+	{
+		_isNavigationStarted = false;
+	}
 
 	return isCompleted;
 }
+
 
 std::string AutonomousNavigator_MainManager::GetNavigationStatus()
 {
@@ -170,6 +210,6 @@ void AutonomousNavigator_MainManager::runStateUpdateLoop()
 	{
 		_positionalStateManager->UpdateState();
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(10)); 
+		std::this_thread::sleep_for(std::chrono::milliseconds(100)); 
 	}
 }

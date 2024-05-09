@@ -155,7 +155,7 @@
     <ClInclude Include="RotationPlanner.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="AutonomousNavigatorGlobals.h" />
-    <ClInclude Include="NavigatorSettingsReader.h" />
+    <ClInclude Include="AutonomousNavigatorSettingsReader.h" />
     <ClInclude Include="AutonomousNavigator_MainManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PositionalState.h" />
@@ -166,7 +166,7 @@
     <ClCompile Include="NavigationSupervisor.cpp" />
     <ClCompile Include="RotationPlanner.cpp" />
     <ClCompile Include="AutonomousNavigatorGlobals.cpp" />
-    <ClCompile Include="NavigatorSettingsReader.cpp" />
+    <ClCompile Include="AutonomousNavigatorSettingsReader.cpp" />
     <ClCompile Include="AutonomousNavigator_MainManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -178,7 +178,7 @@
     <ClCompile Include="PositionalStateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Settings\settings.json" />
+    <None Include="..\Settings\AutonomousNavigator_Settings.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -36,7 +36,7 @@
     <ClInclude Include="AutonomousNavigator_MainManager.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="NavigatorSettingsReader.h">
+    <ClInclude Include="AutonomousNavigatorSettingsReader.h">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
     <ClInclude Include="AutonomousNavigatorGlobals.h">
@@ -77,7 +77,7 @@
     <ClCompile Include="AutonomousNavigator_MainManager.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
-    <ClCompile Include="NavigatorSettingsReader.cpp">
+    <ClCompile Include="AutonomousNavigatorSettingsReader.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
     <ClCompile Include="AutonomousNavigatorGlobals.cpp">
@@ -101,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\Settings\settings.json">
+    <None Include="..\Settings\AutonomousNavigator_Settings.json">
       <Filter>Kaynak Dosyaları</Filter>
     </None>
   </ItemGroup>

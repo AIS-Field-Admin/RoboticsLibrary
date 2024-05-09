@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutonomousNavigator", "AutonomousNavigator\AutonomousNavigator.vcxproj", "{50F92B80-FDC6-40FD-8D0D-B1CD61626507}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NavigatorTest", "NavigatorTest\NavigatorTest.vcxproj", "{BCC2170F-E737-4AD7-8043-E92D068B146B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutonomousNavigatorTest", "NavigatorTest\NavigatorTest.vcxproj", "{BCC2170F-E737-4AD7-8043-E92D068B146B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AutonomousNavigatorTestApp", "AutonomousNavigatorTestApp\AutonomousNavigatorTestApp.vcxproj", "{34700E6F-427D-4AD4-917A-A1CCCDBF635D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{BCC2170F-E737-4AD7-8043-E92D068B146B}.Release|x64.Build.0 = Release|x64
 		{BCC2170F-E737-4AD7-8043-E92D068B146B}.Release|x86.ActiveCfg = Release|Win32
 		{BCC2170F-E737-4AD7-8043-E92D068B146B}.Release|x86.Build.0 = Release|Win32
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Debug|x64.ActiveCfg = Debug|x64
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Debug|x64.Build.0 = Debug|x64
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Debug|x86.ActiveCfg = Debug|Win32
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Debug|x86.Build.0 = Debug|Win32
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Release|x64.ActiveCfg = Release|x64
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Release|x64.Build.0 = Release|x64
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Release|x86.ActiveCfg = Release|Win32
+		{34700E6F-427D-4AD4-917A-A1CCCDBF635D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
