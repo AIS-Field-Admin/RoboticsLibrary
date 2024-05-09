@@ -1,0 +1,7 @@
+C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\BuildSnap7Assembly\bin\x86\Release\Snap7.net.dll
+C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\BuildSnap7Assembly\bin\x86\Release\Snap7.net.pdb
+C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\BuildSnap7Assembly\obj\x86\Release\Snap7.net.dll
+C:\Snap7\Deploy-1.4.0\examples\dot.net\WinForm\BuildSnap7Assembly\obj\x86\Release\Snap7.net.pdb
+C:\Users\Oktay\source\repos\PLC_S71200_Communicator\packages\snap7-1.4.2\examples\dot.net\WinForm\BuildSnap7Assembly\obj\x86\Release\Snap7.net.csproj.AssemblyReference.cache
+C:\Users\Oktay\source\repos\PLC_S71200_Communicator\packages\snap7-1.4.2\examples\dot.net\WinForm\BuildSnap7Assembly\obj\x86\Release\Snap7.net.csproj.CoreCompileInputs.cache
+C:\Users\Oktay\source\repos\PLC_S71200_Communicator\packages\snap7-1.4.2\examples\dot.net\WinForm\BuildSnap7Assembly\obj\x86\Release\Snap7.net.dll
