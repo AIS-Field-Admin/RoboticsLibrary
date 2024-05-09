@@ -3,9 +3,6 @@
 #ifndef IEXTERNALMODULEBOUNDARY_H
 #define IEXTERNALMODULEBOUNDARY_H
 
-
-#include "pch.h"
-
 #include <iostream>
 #include <queue>
 

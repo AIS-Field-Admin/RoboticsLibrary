@@ -3,7 +3,6 @@
 #ifndef IEXTERNALMODULESMANAGER_H
 #define IEXTERNALMODULESMANAGER_H
 
-#include "pch.h"
 
 #include "..\ExternalModuleCommunicator\ExternalModuleCommunicator.h"
 

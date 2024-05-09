@@ -2,7 +2,6 @@
 #define EXTERNALMODULECOMMUNICATOR_H
 
 #pragma once
-#include "pch.h"
 
 #include <atomic>
 #include <thread>

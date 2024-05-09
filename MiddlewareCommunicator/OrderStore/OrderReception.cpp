@@ -25,8 +25,9 @@ void OrderReception::ProcessOrder(const std::string& order)
     {
         storeOrder_ParentModule(order);
     }
-    else if (decodedOrder.RecipientModule == _orderStorage_Middleware->GetStorageName())
+    else
     {
+        std::cout << " ----- StoreOrder_Middleware ---- \n";
         storeOrder_Middleware(order);
     }
 }
@@ -51,6 +52,8 @@ bool OrderReception::storeOrder_Middleware(const std::string& order)
 {
     try
     {
+        std::cout << " ----- TRY _orderStorage_Middleware->AddOrder(order) ---- \n";
+
         _orderStorage_Middleware->AddOrder(order);
 
         return true;

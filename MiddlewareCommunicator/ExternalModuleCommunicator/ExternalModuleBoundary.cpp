@@ -10,30 +10,43 @@ ExternalModuleBoundary::ExternalModuleBoundary(std::string ExternalModuleOrderSt
 
 bool ExternalModuleBoundary::SetOrder(const std::string& order)
 {
-	if (!_isStarted)
+	try
 	{
+		_orderStorage_ExternalModule->AddOrder(order);
+
+		return true;
+	}
+	catch (std::exception& ex)
+	{
+		std::cerr << "Exception occured while trying to add order: " << std::endl;
+
+		std::cerr << ex.what() << std::endl;
+
 		return false;
 	}
 
-	_orderStorage_ExternalModule->AddOrder(order);
-
-	return true;
 }
 
 std::queue<std::string> ExternalModuleBoundary::GetOrders()
 {
-
-	if (!_isStarted)
+	try
 	{
-		return {}; // Returns empty queue
+		return _orderStorage_ParentModule->GetOrders();
+	}
+	catch (std::exception& ex)
+	{
+		std::cerr << "Exception occured while trying to get orders: " << std::endl;
+
+		std::cerr << ex.what() << std::endl;
+
+		return {};
 	}
 
-	return _orderStorage_ParentModule->GetOrders();
 }
 
 bool ExternalModuleBoundary::Start()
 {
-	_isStarted = true;
+	// Implementation left for derived classes if needed
 
 	return true;
 }

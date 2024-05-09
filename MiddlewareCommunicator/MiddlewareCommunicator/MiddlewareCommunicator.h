@@ -3,7 +3,6 @@
 #ifndef MIDDLEWARECOMMUNICATOR_H
 #define MIDDLEWARECOMMUNICATOR_H
 
-#include "pch.h"
 
 #include <iostream>
 #include <queue>
@@ -27,8 +26,6 @@ class MiddlewareCommunicator : public IMiddlewareCommunicator
 		bool SetOrder(std::string order) override;
 
 		std::queue<std::string> GetOrders() override;
-
-		bool Start() override;
 
 	private:
 

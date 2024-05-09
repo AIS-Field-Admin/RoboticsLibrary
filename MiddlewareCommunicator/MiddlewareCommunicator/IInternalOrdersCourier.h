@@ -3,7 +3,6 @@
 #ifndef IINTERNALORDERSCOURIER_H
 #define IINTERNALORDERSCOURIER_H
 
-#include "pch.h"
 #include "..\OrderHandler\OrderHandler.h"
 #include "..\OrderStore\Order.h"
 

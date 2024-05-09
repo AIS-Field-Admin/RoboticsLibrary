@@ -1,14 +1,6 @@
 ﻿C:\Users\Oktay\source\repos\ModularCommunicator\MiddlewareCommunicator\MiddlewareCommunicator.vcxproj(185,5): warning MSB4011: "C:\Users\Oktay\source\repos\ModularCommunicator\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" yeniden içeri aktarılamaz. "C:\Users\Oktay\source\repos\ModularCommunicator\MiddlewareCommunicator\MiddlewareCommunicator.vcxproj (184,5)" konumunda zaten içeri aktarıldı. Bunun nedeni bir derleme yazma hatası olabilir. Bu sonraki içeri aktarma yoksayılacak. 
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(2153,5): warning : The referenced project '..\..\OrderHandlers\OrderHandlers.vcxproj' does not exist.
-  InternalOrdersCourier.cpp
-  MainManager.cpp
-C:\Users\Oktay\source\repos\ModularCommunicator\OrderStore\OrderDecoder.h(27,2): warning C4091: 'static ': hiçbir değişken bildirimi yapılmadığında 'OrderDecoder' solunda yoksayılır
-  ('/MainManager.cpp' kaynak dosyası derleniyor)
-  
-  MiddlewareCommunicator.cpp
-C:\Users\Oktay\source\repos\ModularCommunicator\OrderStore\OrderDecoder.h(27,2): warning C4091: 'static ': hiçbir değişken bildirimi yapılmadığında 'OrderDecoder' solunda yoksayılır
-  ('/MiddlewareCommunicator.cpp' kaynak dosyası derleniyor)
-  
+  ExternalModulesManager.cpp
   OrderDistributionHub.cpp
 C:\Users\Oktay\source\repos\ModularCommunicator\OrderStore\OrderDecoder.h(27,2): warning C4091: 'static ': hiçbir değişken bildirimi yapılmadığında 'OrderDecoder' solunda yoksayılır
   ('/OrderDistributionHub.cpp' kaynak dosyası derleniyor)

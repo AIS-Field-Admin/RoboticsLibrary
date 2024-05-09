@@ -19,35 +19,36 @@ bool MiddlewareCommunicator::Construct(std::string middlewareName,
 
 bool MiddlewareCommunicator::SetOrder(std::string order)
 {
-	if (!_isStarted)
+	try
 	{
+		_mainManager->SetOrder(order);
+
+		return true;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << "An error occured while trying to add orders: " << ex.what() << std::endl;
+
 		return false;
 	}
-
-	_mainManager->SetOrder(order);
-
-	return true;
 }
 
 std::queue<std::string> MiddlewareCommunicator::GetOrders()
 {
-	if (!_isStarted)
+
+	try
 	{
-		return {};
+		std::queue<std::string> orderQueue = _mainManager->GetParentModuleOrders();
+
+		return orderQueue;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << "An error occured while trying to get orders: " << ex.what() << std::endl;
+
+		return { };
 	}
 
-	std::cout << "Trying to get Orders" << std::endl;
-
-	std::queue<std::string> orderQueue = _mainManager->GetParentModuleOrders();
-
-	std::cout << "Queue Count: " << orderQueue.size() << std::endl;
-
-	return orderQueue;
 }
 
-bool MiddlewareCommunicator::Start()
-{
-	_isStarted = true;
 
-	return true;
-}

@@ -39,3 +39,25 @@ std::string OrderCreator::CreateOrder(std::string orderType, const std::map<std:
 
 	return orderString;
 }
+
+std::string OrderCreator::CreateOrder(std::string orderType, const std::string& parameters)
+{
+	if (_recipientName == "" || _senderModuleName == "")
+	{
+		return "Error";
+	}
+
+	Order newOrder;
+
+	newOrder.OrderId = _orderId;
+	newOrder.SenderModule = _senderModuleName;
+	newOrder.RecipientModule = _recipientName;
+	newOrder.OrderType = orderType;
+	newOrder.OrderParameters = parameters;
+
+	std::string orderString = OrderWrapper::SerializeOrder(newOrder);
+
+	_orderId++;
+
+	return orderString;
+}

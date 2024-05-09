@@ -1,8 +1,6 @@
 #ifndef IORDERHANDLER_H
 #define IORDERHANDLER_H
 
-#include "pch.h"
-
 #include <iostream>
 
 #include "..\OrderStore\Order.h"

@@ -14,11 +14,9 @@ class ExternalModuleBoundary : public IExternalModuleBoundary
 
 		std::queue<std::string> GetOrders() override;
 
-		bool Start() override;
+		virtual bool Start() override;
 
 	protected:
-
-		bool _isStarted = false;
 
 		std::shared_ptr<IOrderStorage> _orderStorage_ExternalModule;
 		std::shared_ptr<IOrderStorage> _orderStorage_ParentModule;

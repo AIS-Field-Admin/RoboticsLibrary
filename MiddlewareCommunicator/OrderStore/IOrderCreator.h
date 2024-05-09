@@ -13,7 +13,7 @@ class IOrderCreator
 
 		virtual bool ConstructOrderCreator(std::string recipientName, std::string senderName) = 0;
 		virtual std::string CreateOrder(std::string orderType, const std::map<std::string, std::string>& parameters) = 0;
-
+		virtual std::string CreateOrder(std::string orderType, const std::string& parameters) = 0;
 };
 
 #endif // !IORDERCREATOR_H

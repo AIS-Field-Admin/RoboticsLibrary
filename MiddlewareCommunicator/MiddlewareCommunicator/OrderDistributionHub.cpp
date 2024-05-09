@@ -69,8 +69,11 @@ bool OrderDistributionHub::processOrder(std::string& order)
 {
 	Order decodedOrder = OrderDecoder::DecodeOrder(order);
 
+	std::cout << "ProcessOrder: decoded: " << decodedOrder.RecipientModule << " middeware: " << _orderStorage_Middleware->GetStorageName() << std::endl;
 	if (decodedOrder.RecipientModule == _orderStorage_Middleware->GetStorageName())
 	{
+		std::cout << "Entered InternalPost \n ";
+
 		if(!postInternalOrder(decodedOrder))
 		{
 			return false;
@@ -78,8 +81,10 @@ bool OrderDistributionHub::processOrder(std::string& order)
 	}
 	else
 	{
+		std::cout << "Entered ExternalPost \n ";
 		if (!postExternalOrder(order, decodedOrder.RecipientModule))
 		{
+			std::cout << "ExternalPost return false \n ";
 			return false;
 		}
 	}
@@ -90,13 +95,16 @@ bool OrderDistributionHub::processOrder(std::string& order)
 
 bool OrderDistributionHub::postExternalOrder(std::string& order, std::string& recipientModule)
 {
-	if (recipientModule == "DeepDive")
+	std::cout << "POST EXTERNAL ORDER: " << recipientModule << std::endl;
+	if (recipientModule == _orderStorage_ParentModule->GetStorageName())
 	{
 		_orderStorage_ParentModule->AddOrder(order);
 
 	}
 	else if (!_externalModulesManager->PostOrder(order, recipientModule))
 	{
+		std::cout << " --- Post External Failed -----\n";
+
 		return false;
 	}
 
