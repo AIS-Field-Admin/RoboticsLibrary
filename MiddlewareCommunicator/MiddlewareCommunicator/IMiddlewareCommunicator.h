@@ -3,7 +3,6 @@
 #ifndef IMIDDLEWARECOMMUNICATOR_H
 #define IMIDDLEWARECOMMUNICATOR_H
 
-#include "pch.h"
 #include <iostream>
 #include <queue>
 
@@ -30,8 +29,6 @@ public:
 	virtual bool SetOrder(std::string order) = 0;
 
 	virtual std::queue<std::string> GetOrders() = 0;
-
-	virtual bool Start() = 0;
 
 };
 

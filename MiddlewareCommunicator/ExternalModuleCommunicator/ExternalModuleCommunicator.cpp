@@ -73,8 +73,6 @@ void ExternalModuleCommunicator::retrieveOrdersPeriodically()
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(_orderReceivalPeriod_milliseconds));
 
-        std::cout << "Listening Navigator orders" << std::endl;
-
         std::queue<std::string> orders = _externalModuleBoundary->GetOrders();
 
         while (!orders.empty())

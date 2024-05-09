@@ -3,7 +3,6 @@
 #ifndef IORDERDISTRIBUTIONHUB_H
 #define IORDERDISTRIBUTIONHUB_H
 
-#include "pch.h"
 #include "..\OrderHandler\OrderHandler.h"
 #include "..\OrderStore\Order.h"
 

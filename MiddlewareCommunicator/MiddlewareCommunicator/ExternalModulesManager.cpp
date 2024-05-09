@@ -45,8 +45,10 @@ bool ExternalModulesManager::PostOrder(std::string& order, std::string& recipien
 {
 	for (std::shared_ptr<IExternalModuleCommunicator> externalModuleCommunicator : _externalModuleCommunicators)
 	{
+		std::cout << "ExternalModulesManager::PostOrder: " << externalModuleCommunicator->GetCommunicatorName()<< " " << recipientModule << std::endl;
 		if (externalModuleCommunicator->GetCommunicatorName() == recipientModule)
 		{
+			std::cout << " ---- POST ORDER ENTERED\n";
 			externalModuleCommunicator->AddOrder(order);
 
 			return true;
