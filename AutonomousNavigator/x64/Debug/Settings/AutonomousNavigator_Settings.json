@@ -1,0 +1,4 @@
+{
+  "navigationTolerence_milimeters": 10,
+  "rotationTolerence_degree" :  0.5
+}

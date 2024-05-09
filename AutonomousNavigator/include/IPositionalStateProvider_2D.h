@@ -1,3 +1,6 @@
+#ifndef IPOSITIONALSTATEPROVIDER_2D_H
+#define IPOSITIONALSTATEPROVIDER_2D_H
+
 #pragma once
 
 #include <iostream>
@@ -12,3 +15,5 @@ class IPositionalStateProvider_2D
 
 		virtual double GetAngle() = 0; 
 };
+
+#endif // IPOSITIONALSTATEPROVIDER_2D_H

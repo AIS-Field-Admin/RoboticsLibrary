@@ -28,13 +28,13 @@ void NavigationSupervisor::Rotate(double targetAngle, std::string direction)
 
 	std::cout << "STARTED ROTATION" << std::endl;
 
-	if (!sendRotationCommand(direction))
+	bool isCommandSent = false;
+
+	while (!isCommandSent)
 	{
+		isCommandSent = sendRotationCommand(direction);
+
 		std::cerr << "Problem while sending rotation command" << std::endl;
-
-		_isTargetReached = true;
-
-		return;
 	}
 
 	_navigationThread = std::thread(std::bind(&NavigationSupervisor::runRotationFeedbackLoop, this, targetAngle));
@@ -87,6 +87,8 @@ void NavigationSupervisor::runRotationFeedbackLoop(double targetAngle)
 
 	while (!_isTargetReached)
 	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
 		if (isRotationAngleReached(targetAngle))
 		{
 			_isTargetReached = true;
@@ -95,7 +97,6 @@ void NavigationSupervisor::runRotationFeedbackLoop(double targetAngle)
 
 	setNavigationStatus("Rotation Completed");
 
-	Stop();
 }
 
 bool NavigationSupervisor::isRotationAngleReached(double targetAngle)
@@ -114,6 +115,8 @@ void NavigationSupervisor::runNavigationFeedbackLoop(double target_x, double tar
 
 	while (!_isTargetReached)
 	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
 		if (isPositionReached(target_x, target_y))
 		{
 			_isTargetReached = true;
@@ -122,7 +125,6 @@ void NavigationSupervisor::runNavigationFeedbackLoop(double target_x, double tar
 
 	setNavigationStatus("Navigation Completed");
 
-	Stop();
 }
 
 bool NavigationSupervisor::isPositionReached(double target_x, double target_y)
@@ -134,7 +136,7 @@ bool NavigationSupervisor::isPositionReached(double target_x, double target_y)
 
 	double distance = calculatePositionDistance(target_x, target_y, currentVehiclePosition_x, currentVehiclePosition_y);
 
-	bool isReached = distance < AutonomousNavigatorGlobals::NAVIGATION_TOLERENCE_METERS;
+	bool isReached = distance < AutonomousNavigatorGlobals::NAVIGATION_TOLERENCE_MILIMETERS;
 
 	return isReached;
 }
@@ -158,17 +160,18 @@ bool NavigationSupervisor::Stop()
 {
 	if (!_vehicleBoundary->Stop())
 	{
-		std::cerr << "COULD NOT STOPEED!!" << std::endl;
+		std::cerr << "COULD NOT STOPED!!" << std::endl;
 		
 		return false;
 	}
+
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+	_isTargetReached = true;
 
 	if (_navigationThread.joinable())
 	{
 		_navigationThread.join();
 	}
-
-	_isTargetReached = true;
 
 	return true;
 }
@@ -176,6 +179,7 @@ bool NavigationSupervisor::Stop()
 std::string NavigationSupervisor::GetNavigationStatus()
 {
 	std::lock_guard<std::mutex> lock(_navigationStatusMutex);
+	
 	return _navigationStatus;
 }
 

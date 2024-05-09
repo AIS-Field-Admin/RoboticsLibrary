@@ -27,6 +27,7 @@ void PositionalStateManager::updateAngle()
 {
 	double angleReadFromProvider = _positionalStateProvider->GetAngle();
 
+	std::cout << angleReadFromProvider << std::endl;
 	PositionalState::GetInstance().UpdateAngle(angleReadFromProvider);
 }
 

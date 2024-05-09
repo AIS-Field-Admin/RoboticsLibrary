@@ -2,7 +2,7 @@ C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\NavigationMa
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\NavigationSupervisor.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\NavigationSupervisor.obj
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\RotationPlanner.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\RotationPlanner.obj
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\AutonomousNavigatorGlobals.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\AutonomousNavigatorGlobals.obj
-C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\NavigatorSettingsReader.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\NavigatorSettingsReader.obj
+C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\AutonomousNavigatorSettingsReader.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\AutonomousNavigatorSettingsReader.obj
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\AutonomousNavigator_MainManager.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\AutonomousNavigator_MainManager.obj
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\pch.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\pch.obj
 C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\PositionalState.cpp;C:\Users\Oktay\source\repos\AutonomousNavigator\AutonomousNavigator\x64\Debug\PositionalState.obj

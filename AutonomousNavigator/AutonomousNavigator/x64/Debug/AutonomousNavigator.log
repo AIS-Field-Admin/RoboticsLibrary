@@ -1,3 +1,3 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: Ara dizin (x64\Debug\) başka bir projeden (OilDiver_Navigator.vcxproj) paylaşılan dosyalar içeriyor. Bu, hatalı temizleme ve yeniden oluşturma davranışına neden olabilir.
-  AutonomousNavigatorGlobals.cpp
+  NavigationManager.cpp
   AutonomousNavigator.vcxproj -> C:\Users\Oktay\source\repos\AutonomousNavigator\x64\Debug\AutonomousNavigator.lib
