@@ -2,9 +2,13 @@
 #define S71200PLCCOM_H
 
 #include <iostream>
+#include <thread>
+#include <chrono>
+
 #include "snap7.h"
 
 #include "IPLCCommunicator.h"
+
 
 class S71200PLCCom : public IPLCCommunicator
 {
@@ -20,7 +24,7 @@ class S71200PLCCom : public IPLCCommunicator
         void WriteBytes(int DBNumber, int StartByteAdr, int Size, void* Buffer) override;
 
         bool ReadBit(int DBNumber, int ByteAdr, int BitAdr) override;
-        void WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) override;
+        bool WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) override;
 
 
 

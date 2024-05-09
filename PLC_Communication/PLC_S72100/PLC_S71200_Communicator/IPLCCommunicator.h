@@ -13,7 +13,7 @@ class IPLCCommunicator
 		virtual void ReadBytes(int DBNumber, int StartByteAdr, int Count, void* Buffer) = 0;
 
 		virtual bool ReadBit(int DBNumber, int ByteAdr, int BitAdr) = 0;
-		virtual void WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) = 0;
+		virtual bool WriteBit(int DBNumber, int ByteAdr, int BitAdr, bool BitValue) = 0;
 
 };
 
